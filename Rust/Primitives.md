@@ -10,6 +10,7 @@
 | 64-bit | `i64` | `u64` | `f64`* |
 | 128-bit | `i128` | `u128` | - |
 | arch | `isize` | `usize` | - |
+
 \* Default type
 
 ### Handling overflow
@@ -28,6 +29,7 @@ The `char` type is four byte Unicode Scalar Value from `U+0000` to `U+D7FF` and 
 ## Tuple
 
 Compound type with fixed size and member types.
+
 ```rust
 let tup: (i32, f64, u8) = (500, 6.4, 1);
 let (x, y, z) = tup;
@@ -37,6 +39,7 @@ let x1 = tup.0;
 ## Array
 
 Compound type with fixed size and single fixed type.
+
 ```rust
 let a = [1, 2, 3, 4]; // Implicit type
 let b: [i32; 5] = [1, 2, 3, 4]; // Explicit type

@@ -1,6 +1,7 @@
 # Vector
 
 Construction
+
 ```rust
 // Empty vector
 let v: Vec<i32> = Vec::new();
@@ -10,11 +11,13 @@ let v1 = vec![1, 2, 3];
 ```
 
 Modification
+
 ```rust
 v.push(5);
 ```
 
 Access
+
 ```rust
 // Program will panic if length is less than three
 let third: &i31 = &v[2];
@@ -57,6 +60,7 @@ fn main() {
 ```
 
 `Vec` provides `collect` to gather data into different types of collections. Here we specify it will be a HashMap, but leave the compiler to infer that it is a `HashMap<String, i32>`.
+
 ```rust
 fn main() {
     use std::collections::HashMap;
@@ -88,6 +92,7 @@ for (k, v) in &scores {
 ```
 
 `insert()` replaces any existing value. `entry()` returns a value of enum `Entry` representing a value that may or may not exist. `Entry::or_insert()` inserts the value only if `Entry` does not exist. In either case a mutable refrence to the (possibly new) value is returned.
+
 ```rust
 // Set in any case
 scores.insert(team_name_1, 10);

@@ -22,6 +22,7 @@ let add = |a, b| a + b;
 
 ## Storing closures
 This example shows the `Fn` trait being used to specify the type of a closure. This is required since each closure has a different type, even if the parameters and return types are the same.
+
 ```rust
 struct Cacher<T>
 where

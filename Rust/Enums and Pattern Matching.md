@@ -41,6 +41,7 @@ fn main() {
 ```
 
 Enums work with generic types, the following is in the prelude so does not need to be bought into scope.
+
 ```rust
 enum Option<T> {
     Some(T),

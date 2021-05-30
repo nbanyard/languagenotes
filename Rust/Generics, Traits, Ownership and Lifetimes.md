@@ -1,4 +1,5 @@
 # Generic Types
+
 ```rust
 // Example generic function (no constraints on T)
 fn my_function<T>(list: &[T]) -> &T {}
@@ -111,6 +112,7 @@ The `Copy` trait cannot be implemented when special functionality is required wh
 ## References
 
 A type prefixed with `&` is a reference type, a reference to a value also uses `&`. Use of a reference needs no annotation.
+
 ```rust
 let v = String::from("Hello world!");
 let r: &String = &v;
@@ -120,6 +122,7 @@ let l = r.len();
 References do not take ownership. The value is not dropped when the reference goes out of scope.
 
 By default references are immutable, that is they do not allow the value being referenced to be changed. References follow read many, write one rules: several immutable references OR one mutable reference may be in scope. The scope of a reference starts when it is introduced and extends to when it is last used (which may be earlier than the closing brace).
+
 ```rust
 let v = String::from("Hello world");
 let r1: &String = &v;
@@ -133,6 +136,7 @@ A reference may not exist after the referenced value goes out of scope.
 ## Slices
 
 A slice is a reference with a length. The borrowing rules of references apply.
+
 ```rust
 let s = String::from("Hello world!");
 let h: &str = &s[..5];
@@ -144,16 +148,19 @@ let b: &[i32] = &a[1..3];
 # Lifetimes
 
 The lifetime of parameter `s` must be as long as the lifetime of the returned reference.
+
 ```rust
 fn my_function<'a>(s: &'a String) -> &'a str {}
 ```
 
 The lifetime of the returned reference is unrelated to the lifetime of the parameter.
+
 ```rust
 fn my_function<'a, 'b>(s: &'a String) -> &'b str {}
 ```
 
-Static lifetime continues to the end of the program
+Static lifetime continues to the end of the program.
+
 ```rust
 fn bool_to_string(b: bool) -> &'static str {
     if b {"true"} else {"false"}
@@ -161,6 +168,7 @@ fn bool_to_string(b: bool) -> &'static str {
 ```
 
 The lifetimes of any values assigned to references within a struct must be at least as long as the lifetime of the struct. I think the stuct definition needs the annotations so that they can be referred to in method and function prototypes.
+
 ```rust
 struct MyStruct<'a, 'b> { 
     a_ref: &'a str,
@@ -202,7 +210,8 @@ fn main() {
 
 ```
 
-Lifetime parameters go before generic type parameters
+Lifetime parameters go before generic type parameters.
+
 ```rust
 fn my_func<'a, T>(s: &'a T) -> &'a T { 
     s 

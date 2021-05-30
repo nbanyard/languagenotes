@@ -8,6 +8,7 @@ Strings (`String` and `str`) are UTF-8 encoded sequences of bytes, compared to `
 
 ## Creating and Manipulating
 Creating strings
+
 ```rust
 // Create an empty but growable string
 let mut s = String::new();
@@ -18,6 +19,7 @@ let s = String::from("initial contents");
 ```
 
 Updating strings
+
 ```rust
 let mut s = String::from("foo");
 s.push_str("bar");
@@ -32,6 +34,7 @@ let s = format!("{}, {}", s1, s2);
 ```
 
 Accessing characters and sub-strings. Strings are implemented as `Vec<u8>`, since indexing would return individual bytes not characters and this is not normally what is required, indexing is not supported. 
+
 ```rust
 // Slicing strings is supported, but done in bytes
 // The program will panic if the slice is not done on a char boundary

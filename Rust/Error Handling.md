@@ -2,6 +2,7 @@
 
 ## Recoverable errors
 Rather than exceptions the type `Result<T, E>` is used where a recoverable error may have occurred.
+
 ```rust
 enum Result<T, E> {
     Ok(T),
@@ -55,6 +56,7 @@ The `?` is placed after a `Result` value. If the value matches `Ok`, the value i
 Generally programming errors. Program can be terminated with `panic!` macro.
 
 By default panic unwinds the stack and cleans up data from each function. Programs can be built to skip this with the following entry in `Cargo.toml`. This produced some reduction in binary size.
+
 ```toml
 [profile.release]
 panic = 'abort'

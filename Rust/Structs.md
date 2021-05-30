@@ -20,6 +20,7 @@ struct MyUnit(); // Spoiler alert: used for traits
 ```
 
 Provide an automatically generated debug format.
+
 ```rust
 #[derive(Debug)]
 struct Rectangle {

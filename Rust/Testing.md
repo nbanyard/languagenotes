@@ -21,6 +21,7 @@ mod tests {
 ```
 
 ### Assertions and results
+
 ```rust
 assert!(condition_expected_to_be_true);
 
@@ -57,13 +58,13 @@ annotation | use
 `[ignore]` | Do not run this test, include in ignored test count.
 
 ### Running tests
-Help from test compiler: `cargo test --help`.
-Help from test program: `cargo test -- --help`.
-Ordinarily all tests are run in parallel, to run them in series: `cargo test -- --test-threads=1`.
-Ordinarily only output from tests that fail is rendered, to render all output: `cargo test -- --show-output`.
-To only run tests whose names contain `somestring`: `cargo test somestring`.
-To run ignored tests: `cargo test -- --ignored`.
-To only run unit tests: `cargo test --lib`. To include unit tests if other filters apply add `--lib`.
+- Help from test compiler: `cargo test --help`.
+- Help from test program: `cargo test -- --help`.
+- Ordinarily all tests are run in parallel, to run them in series: `cargo test -- --test-threads=1`.
+- Ordinarily only output from tests that fail is rendered, to render all output: `cargo test -- --show-output`.
+- To only run tests whose names contain `somestring`: `cargo test somestring`.
+- To run ignored tests: `cargo test -- --ignored`.
+- To only run unit tests: `cargo test --lib`. To include unit tests if other filters apply add `--lib`.
 
 ### Organising tests
 1. Add a `test` module to each source file to test its contents. The `cfg(test)` attribute ensures the module is only compiled when the `test` configuration option 	is provided.
@@ -80,6 +81,7 @@ To only run unit tests: `cargo test --lib`. To include unit tests if other filte
 ## Integration tests
 
 `tests/integration_test.rs`:
+
 ```rust
 use adder;
 

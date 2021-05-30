@@ -20,12 +20,14 @@ If `src/main.rs` exists the package contains a binary crate with the same name a
 ## Using external packages
 
 Add package to dependency list in Cargo.toml
+
 ```toml
 [dependencies]
 rand = "0.5.5"
 ```
 
-Import contents into source code
+Import contents into source code.
+
 ```rust
 use rand::Rng;
 ```
@@ -33,6 +35,7 @@ use rand::Rng;
 Standard library `std` does not need to be specified in dependencies, but its contents need bringing into scope (or accessed via full path).
 
 Short cut for bringing different parts of a package into scope.
+
 ```rust
 // Long hand
 use std::cmp::Ordering;
@@ -66,6 +69,7 @@ Controls organization, scope and privacy of paths.
 
 ## Module for library crate
 src/lib.rs
+
 ```rust
 mod front_of_house {
     mod hosting {
@@ -139,16 +143,19 @@ pub fn eat_at_restaurant() {
 Putting modules into separate files does not affect they way they are consumed.
 
 src/lib.rs
+
 ```rust
 mod front_of_house;
 ```
 
 src/front_of_house.rs
+
 ```rust
 mod hosting;
 ```
 
 src/front_of_house/hosting.rs
+
 ```rust
 pub fn add_to_waitlist() {}
 ```
